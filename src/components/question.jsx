@@ -2,19 +2,32 @@ import profilepic from '../assets/images/profilepic.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faThumbsUp, faComment, faCheckDouble, faCheck,
-    faClockRotateLeft, faEllipsisVertical
+    faClockRotateLeft, faEllipsisVertical,faXmark
 } from '@fortawesome/free-solid-svg-icons'
 import Comment from './comment';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import {useNavigate} from 'react-router-dom'
 import React from 'react';
+import PopupMenu from './popupmenu';
 
 function Question() {
     const history=useNavigate()
     const [comment, setComment] = useState("")
     const [isLoading,setIsLoading]=useState(false)
     const [comments, setComments] = useState([])
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handleClick = () => {
+      setIsClicked(!isClicked);
+    }
+
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
+
     const onChangeHandler = (e) => {
         setComment(e.target.value)
     }
@@ -47,6 +60,8 @@ function Question() {
             console.error('Error:', error);
             setIsLoading(false);
           });
+          setShowPopup(true);
+          setTimeout(() => setShowPopup(false), 2000);
       };
       const onClickgo= (userid) => {
         history("/profprofile/${userid}")
@@ -64,14 +79,20 @@ function Question() {
                             <h2><FontAwesomeIcon icon={faClockRotateLeft} />   Il y’a 3min</h2>
                         </div>
                         )}
+                        
                         {posts[index].user.id == document.cookie.split('; ').find((row) => row.startsWith('id='))?.split('=')[1] ? (
-                            <div className="pointer">
-                                <button className='pointsicon' disabled>Non autorisé</button>
-                                
+                            <div className='points pointsmenu'>
+                              <FontAwesomeIcon onClick={toggleMenu} icon={faEllipsisVertical} />
+                              {isMenuOpen && <PopupMenu onClose={() => setIsMenuOpen(false)} show={isMenuOpen} />}
                             </div>
                         ) : (
                             <div className="pointer">
-                                <button className='pointsicon' onClick={()=>onClickReturn(post.id,post.user.id)} disabled={isLoading}>Postuler</button>
+                                <button className='pointsicon' id='postuler' onClick={()=>onClickReturn(post.id,post.user.id)} disabled={isLoading}>Postuler</button>
+                                {showPopup && (
+                               <div className="popuppostuler">
+                                <h5 id='pos'>Postulé avec succès!</h5> 
+                                </div>
+                                )}
                             </div>
 )}
 
@@ -89,7 +110,9 @@ function Question() {
                     )}
                     <hr />
                     <ul className='qstlist'>
-                        <li><FontAwesomeIcon icon={faThumbsUp} />     like</li>
+                        <li ><FontAwesomeIcon icon={faThumbsUp} className={isClicked ? 'clicked' : 'like'} onClick={handleClick} /> 
+                        <button  className={isClicked ? 'clicked' : 'liketext'} onClick={handleClick}  >like</button>
+                        </li>
                         <li className='listt'><FontAwesomeIcon icon={faComment} />     Comment</li>
                         <li className='listt'><FontAwesomeIcon icon={faCheckDouble} />     vu par 1k</li>
                     </ul>

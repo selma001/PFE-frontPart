@@ -42,11 +42,8 @@ function EditStudentP(){
       })
       const result = await response.json();
       console.log(result)
-      history("/studentprofile")
+      history("/home")
   }
-
-
-
 
     return(
         <div className='editstudent'>
@@ -58,14 +55,16 @@ function EditStudentP(){
                <div className='img'  >
                   <FontAwesomeIcon icon={faImage} className='image'/>  
                   <p>deposer votre photo de profile ici. Max size : 2MB</p>
-                  <input type="file" className='inputp' placeholder='Entrer le CV' name='profil_pic'/>
+                  <label htmlFor="file-input" className="file-custom-button">Choisir un fichier</label>
+                  <input type="file" className='inputp' placeholder='Entrer le CV' name='profil_pic' id="file-input"/>
                </div>
 
                <p>CV</p>
                <div className='pdf' name="CV" >
                   <FontAwesomeIcon icon={faFilePdf} className='image'/>
                   <p>deposer votre CV ici. Max size : 10MB ..</p>
-                  <input type="file" className='inputp' placeholder='Entrer le CV' name='CV'/>
+                  <label htmlFor="file-input" className="file-custom-button bbtnn">Choisir un fichier</label>
+                  <input type="file" className='inputp' placeholder='Entrer le CV' name='CV' id="file-input"/>
                </div>
 
                <div className='top'>

@@ -42,7 +42,6 @@ function LeftBar(){
 
             <div className="hsearch">
                <form className="searchbar" onSubmit={handleSubmit}>
-                   
                    <input className='linput' type="text" placeholder='Search' onChange={handleChange } />
                    <button ><FontAwesomeIcon icon={faMagnifyingGlass} className='serachicon'/></button>
                </form>

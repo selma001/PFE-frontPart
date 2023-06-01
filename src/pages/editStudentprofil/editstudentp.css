@@ -177,4 +177,40 @@ textarea::placeholder{
     padding-left: 0;
     margin-left: 0;
 }
+input[type="file"] {
+    display: none;
+  }
+  
+.file-custom-button {
+   
+    display: inline-block;
+    background-color: #244D4D;
+    color: white;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 12px;
+    margin-left: 600px;
+    font-family: 'Poppins';
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 16px;
+    font-size: 12px;
+    text-align: center;
+}
+  
+#file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
 
+.bbtnn{
+    margin-left: 680px;
+}
+
+#prrr{
+    margin-left: 700px;
+}

@@ -1,3 +1,18 @@
 #sisi{
     color: red;
 }
+#vrftitle{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    color: #000000;
+    line-height: 5px;
+}
+#vrftest{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 550;
+    font-size: 15px;
+    color: #707070;
+}

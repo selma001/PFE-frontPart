@@ -7,7 +7,6 @@
 
 .respocard{
     width: 210px;
-    height: 400px;
     background: #FFFFFF;
     border-radius: 20px;
     padding-left: 30px;
@@ -15,6 +14,7 @@
     padding-bottom: 15px;
     margin-left: 20px;
     margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
 .respocard>h1{

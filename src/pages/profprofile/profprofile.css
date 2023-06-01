@@ -10,12 +10,12 @@
 
 .pfecard{
     width: 220px;
-    height: 400px;
     background: #FFFFFF;
     border-radius: 20px;
-    padding: 10px;
+    padding: 16px;
     margin-top: 15px;
     margin-left: 18px;
+    word-wrap: break-word;
 }
 
 .pfecard>h1{
@@ -88,7 +88,7 @@
 .addpfe{
     background-color:  #faf8f8;;
     width: 400px;
-    height: 440px;
+    
     padding: 20px;
     border-radius: 20px;
     padding-left: 50px;
@@ -136,6 +136,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 #select{
     width: 140px;

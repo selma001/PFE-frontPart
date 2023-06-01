@@ -2,7 +2,7 @@ import LoginLeft from "../../components/loginLeft"
 import usthb from '../../assets/images/usthb.png';
 import './login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAt,  faLock } from '@fortawesome/free-solid-svg-icons'
+import { faAt,  faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
 import {useNavigate} from 'react-router-dom'
 import React from 'react';
@@ -47,9 +47,9 @@ function Login() {
               <h1 className="loginh">se connecter</h1>
               <p className="loginp">connectez vous ici pour plus d’accesbilité a notre platforme</p>
 
-                <h3 className="head">Email </h3>
+                <h3 className="head">username </h3>
                 <div className="box">
-                <FontAwesomeIcon  icon={faAt} className="izan" />
+                <FontAwesomeIcon icon={faUser} className="izan" />
                 <input type="text" placeholder="username " className="test" name="username" onChange={handleChange}/>
                 </div>
                 

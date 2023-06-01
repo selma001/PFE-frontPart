@@ -99,6 +99,11 @@ a.underline-hover-effect {
     font-size: 19px;
     transition: 0.8s;
 }
+#navbtn:hover{
+    border: 1px solid var(--main-color);
+    background-color: white;
+    color:var(--main-color) ;
+}
 
 
 /*navbar end*/

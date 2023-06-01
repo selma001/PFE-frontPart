@@ -51,8 +51,9 @@ function EditProfP(){
                <p className='firstp'>Photo de profile</p>
                <div className='img'>
                   <FontAwesomeIcon icon={faImage} className='image'/>  
-                  <p>deposer votre photo de profile ici. Max size : 2MB</p>
-                  <input type="file" className='inputp' placeholder='Entrer le CV' name='profil_pic'/>
+                  <p>deposer votre photo de profile ici. </p>
+                  <label htmlFor="file-input" className="file-custom-button bbtnn" id='prrr'>Choisir un fichier</label>
+                  <input type="file" className='inputp' placeholder='Entrer le CV' name='profil_pic' id="file-input "/>
                </div>
                <div className='top'>
                   <label htmlFor="">

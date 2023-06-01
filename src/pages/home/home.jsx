@@ -8,9 +8,21 @@ import profilepic from '../../assets/images/profilepic.png';
 import Question from '../../components/question'
 import { useState } from 'react';
 import React from 'react';
+import AddQuestion from '../../components/addquestion'
+
 
 
 function Home (){
+
+    const [showPopup, setShowPopup] = useState(false); 
+
+    const handleShowPopup = () => {
+      setShowPopup(true);
+    };
+  
+    const handleClosePopup = () => {
+      setShowPopup(false);
+    };
 
     return(
         <div className='home'>
@@ -23,9 +35,10 @@ function Home (){
                         <h1>username</h1>
                         <h2><FontAwesomeIcon icon={faEarthAmericas} />    public</h2>
                       </div>
-                      <i className='iconh'><FontAwesomeIcon icon={faBars} /></i>
+                      <button className='ajtbtn' onClick={handleShowPopup}> ajouter une question</button>
+                      {showPopup && <AddQuestion onClose={handleClosePopup} />}
                    </div>
-                   <p>Entant que etudiant avez vous une question ? </p>
+                   <p> Avez vous une question ? </p>
             </div>
              <Question/>
             </div>

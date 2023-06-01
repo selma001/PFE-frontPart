@@ -24,8 +24,10 @@ function Verification() {
   };
   
   return (
-    <div className="avancement">
-      <form onSubmit={handleSubmit} className="avnform">
+    <div className="popup">
+      <form onSubmit={handleSubmit} className="addpfe">
+        <h3 id='vrftitle'>Vérification de votre email .</h3>
+        <h4 id='vrftest'>Vous allez recevoir email avec votre code dans un instant .</h4>
         <label htmlFor="discutions" id="lbl">
           <br />
           <input

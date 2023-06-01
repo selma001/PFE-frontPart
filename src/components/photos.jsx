@@ -6,6 +6,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Photos(){
+  const images = [image1, image2, image3, image4];
+  
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  
     return(
         <div className="photos">
           <div className='div1'>

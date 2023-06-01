@@ -1,10 +1,10 @@
-import NotificationsBar from "../../components/notificationsbar"
-import AddSkill from "../../components/addskill"
+
+import AddQuestion from "../../components/addquestion";
 import React from 'react';
 function Test (){
     return(
         <div className="test">
-           <AddSkill/>
+           <AddQuestion/>
         </div>
     )
 }
